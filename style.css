@@ -1,0 +1,175 @@
+/* ===== Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Nunito:wght@300;400;600&display=swap');
+
+/* ===== Color Palette ===== */
+:root {
+  --peach: #ffdab9;
+  --pink: #f7b5c5;
+  --pale-yellow: #fff5c3;
+  --salmon: #ff9f80;
+  --aqua: #76c7c5;
+  --dark-grey: #2f2f38;
+  --off-white: #fffdf8;
+}
+
+/* ===== Global Styles ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.7;
+  color: var(--dark-grey);
+  background: linear-gradient(135deg, var(--pale-yellow), var(--peach));
+}
+
+/* ===== Header / Banner ===== */
+header {
+  background: radial-gradient(circle at top left, var(--pink), var(--peach));
+  border-bottom: 4px solid var(--aqua);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle retro stripes at the bottom of the header */
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 6px;
+  background-image: linear-gradient(
+    90deg,
+    var(--aqua) 0,
+    var(--aqua) 25%,
+    var(--salmon) 25%,
+    var(--salmon) 50%,
+    var(--pink) 50%,
+    var(--pink) 75%,
+    var(--pale-yellow) 75%,
+    var(--pale-yellow) 100%
+  );
+}
+
+header img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== Main Layout ===== */
+main {
+  max-width: 960px;
+  margin: 30px auto 60px;
+  padding: 24px 20px 32px;
+  background-color: var(--off-white);
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+  border: 2px solid rgba(0, 0, 0, 0.03);
+}
+
+/* ===== Headings ===== */
+h1,
+h2 {
+  font-family: "Baloo 2", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+}
+
+/* Main title */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--dark-grey);
+  text-shadow: 1px 1px 0 rgba(255, 245, 195, 0.8),
+               2px 2px 0 rgba(118, 199, 197, 0.4);
+}
+
+/* Subheading styling */
+h2 {
+  font-size: 1.4rem;
+  margin-top: 32px;
+  margin-bottom: 8px;
+  color: var(--dark-grey);
+  position: relative;
+  padding-left: 12px;
+}
+
+/* Little retro bar to the left of each h2 */
+h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 70%;
+  transform: translateY(-50%);
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    var(--aqua),
+    var(--salmon)
+  );
+}
+
+/* ===== Paragraphs & Text ===== */
+p {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+/* Intro paragraph just under the main title */
+main > p:first-of-type {
+  text-align: center;
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #444;
+}
+
+/* "Coming Soon" italics styling */
+i {
+  color: var(--dark-grey);
+  font-style: normal;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--pink), var(--pale-yellow));
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+/* ===== Section spacing ===== */
+h2 + p {
+  margin-left: 4px;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 600px) {
+  main {
+    margin: 20px 10px 40px;
+    padding: 18px 14px 24px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+}
